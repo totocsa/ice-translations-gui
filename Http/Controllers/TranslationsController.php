@@ -133,7 +133,6 @@ class TranslationsController extends IcseusdController
 
     public function indexQuery(): LengthAwarePaginator
     {
-        /* @var $query \App\Models\XModel */
         $t0 = 'translationvariants';
         $t1 = 'translationoriginal';
         $t2 = 'locale';
