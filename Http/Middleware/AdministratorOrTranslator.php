@@ -15,7 +15,7 @@ class AdministratorOrTranslator
             !$request->user()->hasAnyRole(['Administrator', 'Translator'])
         ) {
             //abort(403, 'Access denied');
-            return redirect()->route('/');
+            return redirect()->route('appRoot');
         }
 
         return $next($request);

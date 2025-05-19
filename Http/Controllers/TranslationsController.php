@@ -81,9 +81,60 @@ class TranslationsController extends IcseusdController
     public function fields()
     {
         return [
+            'filter' => [
+                'translationoriginal-category' => [
+                    'tagName' => 'input',
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ],
+                'translationoriginal-subtitle' => [
+                    'tagName' => 'input',
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ],
+                'translationvariants-locales_id' => [
+                    'tagName' => 'select',
+                    'options' => array_merge([['value' => '', 'text' => '']], $this->getLocales_idValueTexts()),
+                ],
+                'translationvariants-subtitle' => [
+                    'tagName' => 'input',
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ],
+            ],
+            'item' => [
+                'translationvariants-subtitle' => [
+                    'tagName' => 'EDITABLE_TEXT_STARTER',
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ],
+            ],
+            'form' => [
+                'translationvariants-locales_id' => [
+                    'tagName' => 'select',
+                    'options' => array_merge([['value' => '', 'text' => '']], $this->getLocales_idValueTexts()),
+                ],
+                'translationvariants-subtitle' => [
+                    'tagName' => 'input',
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ],
+            ],
+            'show' => [],
+        ];
+    }
+
+    public function _fields()
+    {
+        return [
             'translationoriginal-category' => [
                 'filter' => [
-                    'tag' => 'input',
+                    'tagName' => 'input',
                     'attributes' => [
                         'type' => 'text',
                     ],
@@ -91,7 +142,7 @@ class TranslationsController extends IcseusdController
             ],
             'translationoriginal-subtitle' => [
                 'filter' => [
-                    'tag' => 'input',
+                    'tagName' => 'input',
                     'attributes' => [
                         'type' => 'text',
                     ],
@@ -99,12 +150,12 @@ class TranslationsController extends IcseusdController
             ],
             'translationvariants-locales_id' => [
                 'filter' => [
-                    'tag' => 'select',
+                    'tagName' => 'select',
                     'options' => ['additionalData', 'locales_idValueTexts'],
                     'attributes' => [],
                 ],
                 'form' => [
-                    'tag' => 'select',
+                    'tagName' => 'select',
                     'options' => ['additionalData', 'locales_idValueTexts'],
                     'attributes' => [],
                 ],
@@ -116,13 +167,13 @@ class TranslationsController extends IcseusdController
                 ],*/
                 'editableOnIndex' => true,
                 'form' => [
-                    'tag' => 'input',
+                    'tagName' => 'input',
                     'attributes' => [
                         'type' => 'text',
                     ],
                 ],
                 'filter' => [
-                    'tag' => 'input',
+                    'tagName' => 'input',
                     'attributes' => [
                         'type' => 'text',
                     ],
