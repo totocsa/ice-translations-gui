@@ -10,7 +10,9 @@ const props = defineProps({
     routeController: String,
     routeParameterName: String,
     modelClassName: String,
-    model: Object,
+    item: Object,
+    orders: Object,
+    fields: Object,
 })
 
 const actionMenuConfig = {
@@ -53,8 +55,7 @@ const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Show', props.m
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <IcseusdShow :routeController="routeController" :routeParameterName="routeParameterName"
-                        :model="props.model" :modelClassName="modelClassName" />
+                    <IcseusdShow :config="props" />
                 </div>
             </div>
         </div>

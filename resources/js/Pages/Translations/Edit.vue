@@ -11,7 +11,7 @@ const props = defineProps({
     routeController: String,
     routeParameterName: String,
     modelClassName: String,
-    model: Object,
+    item: Object,
     fields: Object,
     orders: Object,
     additionalData: Object,
@@ -33,25 +33,25 @@ const actionMenuConfig = {
     show: {
         label: 'Show',
         attributes: {
-            href: route(`${props.routeController}.show`, { [props.routeParameterName]: props.model.id }),
+            href: route(`${props.routeController}.show`, { [props.routeParameterName]: props.item.id }),
         }
     },
     destroy: {
         label: 'Delete',
         attributes: {
-            href: route(`${props.routeController}.destroy`, { [props.routeParameterName]: props.model.id }),
+            href: route(`${props.routeController}.destroy`, { [props.routeParameterName]: props.item.id }),
         }
     }
 }
 
 let da = {}
-for (let i of props.orders.fields) {
-    da[i] = props.model[i]
+for (let i of props.orders.item.fields) {
+    da[i] = props.item[i]
 }
 
 const formData = reactive(da)
 
-const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Edit', props.model.id]
+const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Edit', props.item.id]
 </script>
 
 <template>
@@ -64,9 +64,7 @@ const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Edit', props.m
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <IcseusdEdit :routeController="routeController" :routeParameterName="routeParameterName"
-                        :model="props.model" :modelClassName="modelClassName" :formData="formData"
-                        :fields="props.fields" :orders="props.orders" :additionalData="additionalData" />
+                    <IcseusdEdit :config="props" :formData="formData" />
                 </div>
             </div>
         </div>
