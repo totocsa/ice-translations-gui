@@ -3,7 +3,7 @@ import { reactive, ref } from "vue"
 import { router, useForm } from "@inertiajs/vue3"
 import IceLayout from '@/Layouts/IceLayout.vue'
 import Form from "./Form.vue"
-import ActionMenu from '@/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue'
+import ActionMenu from '@IceIcseusd/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue'
 import LocalTranslationHeader from '@/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue'
 
 const success = ref(false);

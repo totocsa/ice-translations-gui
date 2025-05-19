@@ -1,7 +1,7 @@
 <script setup>
 import IceLayout from '@/Layouts/IceLayout.vue';
-import IcseusdShow from '@/Components/totocsa/Icseusd/Show.vue';
-import ActionMenu from '@/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue';
+import IcseusdShow from '@IceIcseusd/Components/totocsa/Icseusd/Show.vue';
+import ActionMenu from '@IceIcseusd/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue';
 import LocalTranslationHeader from '@/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue';
 
 const props = defineProps({

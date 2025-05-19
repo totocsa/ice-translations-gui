@@ -1,8 +1,8 @@
 <script setup>
 import { reactive } from "vue"
 import IceLayout from '@/Layouts/IceLayout.vue';
-import IcseusdEdit from '@/Components/totocsa/Icseusd/Edit.vue';
-import ActionMenu from '@/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue';
+import IcseusdEdit from '@IceIcseusd/Components/totocsa/Icseusd/Edit.vue';
+import ActionMenu from '@IceIcseusd/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue';
 import LocalTranslationHeader from '@/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue';
 
 const props = defineProps({

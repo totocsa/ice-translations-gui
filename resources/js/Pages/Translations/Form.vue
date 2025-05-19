@@ -1,5 +1,5 @@
 <script setup>
-import { useFilters } from "@/Components/totocsa/Icseusd/js/useFilters";
+import { useFilters } from "@IceIcseusd/Components/totocsa/Icseusd/js/useFilters";
 import LocalTranslation from "@/Components/totocsa/LocalTranslation/LocalTranslation.vue";
 
 const props = defineProps({
