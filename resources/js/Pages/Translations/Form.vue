@@ -1,6 +1,6 @@
 <script setup>
-import { useFilters } from "@IceIcseusd/Components/totocsa/Icseusd/js/useFilters";
-import LocalTranslation from "@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslation.vue";
+import { useFilters } from "@IceIcseusd/Components/Icseusd/js/useFilters";
+import LocalTranslation from "@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslation.vue";
 
 const props = defineProps({
     formData: Object,

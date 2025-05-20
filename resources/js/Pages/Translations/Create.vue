@@ -3,8 +3,8 @@ import { reactive, ref } from "vue"
 import { router, useForm } from "@inertiajs/vue3"
 import IceLayout from '@IceDatabaseTranslationLocally/Layouts/IceLayout.vue'
 import Form from "./Form.vue"
-import ActionMenu from '@IceIcseusd/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue'
-import LocalTranslationHeader from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue'
+import ActionMenu from '@IceIcseusd/Components/Icseusd/ActionMenu/ActionMenu.vue'
+import LocalTranslationHeader from '@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslationHeader.vue'
 
 const success = ref(false);
 
