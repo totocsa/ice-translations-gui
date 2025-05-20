@@ -1,8 +1,8 @@
 <script setup>
-import IceLayout from '@/Layouts/IceLayout.vue';
+import IceLayout from '@IceDatabaseTranslationLocally/Layouts/IceLayout.vue'
 import IcseusdShow from '@IceIcseusd/Components/totocsa/Icseusd/Show.vue';
 import ActionMenu from '@IceIcseusd/Components/totocsa/Icseusd/ActionMenu/ActionMenu.vue';
-import LocalTranslationHeader from '@/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue';
+import LocalTranslationHeader from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue';
 
 const props = defineProps({
     userRoles: Object,

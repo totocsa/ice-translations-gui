@@ -2,7 +2,7 @@
 import { XMarkIcon } from '@heroicons/vue/20/solid'
 import { useModalLiFoStore } from '@/Components/totocsa/ModalLiFo/ModalLiFoStore.js'
 import Modal from "@/Components/totocsa/ModalLiFo/Modal.vue"
-import LocalTranslation from "@/Components/totocsa/LocalTranslation/LocalTranslation.vue"
+import LocalTranslation from "@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslation.vue"
 import CountItemsAndTranslationIcon from "@/Components/totocsa/ModalLiFo/CountItemsAndTranslationIcon.vue"
 
 const props = defineProps({
