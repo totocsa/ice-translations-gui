@@ -4,7 +4,7 @@ import { Workbook } from "exceljs"
 import { saveAs } from "file-saver"
 import { z } from "zod"
 import axios from "axios"
-import { useModalLiFoStore } from "@/Components/totocsa/ModalLiFo/ModalLiFoStore.js"
+import { useModalLiFoStore } from "@IceModalLiFo/Components/totocsa/ModalLiFo/ModalLiFoStore.js"
 import ImportModal from "../ImportModal.vue"
 
 export function useIndex() {

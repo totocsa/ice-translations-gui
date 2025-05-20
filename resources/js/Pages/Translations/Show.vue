@@ -31,18 +31,18 @@ const actionMenuConfig = {
     edit: {
         label: 'Edit',
         attributes: {
-            href: route(`${props.routeController}.edit`, { [props.routeParameterName]: props.model.id }),
+            href: route(`${props.routeController}.edit`, { [props.routeParameterName]: props.item.id }),
         }
     },
     destroy: {
         label: 'Delete',
         attributes: {
-            href: route(`${props.routeController}.destroy`, { [props.routeParameterName]: props.model.id }),
+            href: route(`${props.routeController}.destroy`, { [props.routeParameterName]: props.item.id }),
         }
     }
 }
 
-const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Show', props.model.id]
+const titleArray = ['Translation', 'Translations', 'ActionMenu', 'Show', props.item.id]
 </script>
 
 <template>

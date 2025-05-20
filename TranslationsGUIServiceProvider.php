@@ -15,8 +15,5 @@ class TranslationsGUIServiceProvider extends ServiceProvider
     public function boot()
     {
         // Publikálható migrációk
-        $this->publishes([
-            __DIR__ . '/resources' => resource_path(),
-        ], 'ice-translations-gui');
     }
 }

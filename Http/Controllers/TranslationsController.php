@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Totocsa\Icseusd\Http\Controllers\IcseusdController;
 use Totocsa\DatabaseTranslationLocally\Models\Locale;
@@ -288,6 +289,20 @@ class TranslationsController extends IcseusdController
             'locales_idValueTexts' => $locales_idValueTexts,
             'translationoriginals_idValueTexts' => $translationoriginals_idValueTexts,
         ];
+    }
+
+    public function setVueComponents($prefix = '')
+    {
+        $name = last(explode('\\', $this::class));
+        $name = substr($name, 0, strlen($name) - strlen('Controller'));
+        $prefix .= Str::plural($name);
+
+        $routes = $this->getRoutes();
+
+        $this->vueComponents = [];
+        foreach ($routes as $k => $v) {
+            $this->vueComponents[$k] = "../../../vendor/totocsa/ice-translations-gui/resources/js/Pages/$prefix/" . ucfirst(strtolower($k));
+        }
     }
 
     public function getLocales_idValueTexts()
