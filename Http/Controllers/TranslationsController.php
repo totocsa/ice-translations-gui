@@ -56,28 +56,31 @@ class TranslationsController extends IcseusdController
         'translationvariants-subtitle' => '',
     ];
 
-    public $conditions = [
-        'translationoriginal-category' => [
-            'operator' => 'ilike',
-            'value' => "%{{translationoriginal-category}}%",
-            'boolean' => 'and',
-        ],
-        'translationoriginal-subtitle' => [
-            'operator' => 'ilike',
-            'value' => "%{{translationoriginal-subtitle}}%",
-            'boolean' => 'and',
-        ],
-        'translationvariants-locales_id' => [
-            'operator' => '=',
-            'value' => '{{translationvariants-locales_id}}',
-            'boolean' => 'and',
-        ],
-        'translationvariants-subtitle' => [
-            'operator' => 'ilike',
-            'value' => "%{{translationvariants-subtitle}}%",
-            'boolean' => 'and',
-        ],
-    ];
+    public function conditions()
+    {
+        return [
+            'translationoriginal-category' => [
+                'operator' => $this->ilikeORLike,
+                'value' => "%{{translationoriginal-category}}%",
+                'boolean' => 'and',
+            ],
+            'translationoriginal-subtitle' => [
+                'operator' => $this->ilikeORLike,
+                'value' => "%{{translationoriginal-subtitle}}%",
+                'boolean' => 'and',
+            ],
+            'translationvariants-locales_id' => [
+                'operator' => '=',
+                'value' => '{{translationvariants-locales_id}}',
+                'boolean' => 'and',
+            ],
+            'translationvariants-subtitle' => [
+                'operator' => $this->ilikeORLike,
+                'value' => "%{{translationvariants-subtitle}}%",
+                'boolean' => 'and',
+            ],
+        ];
+    }
 
     public function fields()
     {
@@ -200,9 +203,9 @@ class TranslationsController extends IcseusdController
             ->leftJoin("translationoriginals as $t1", "$t0.translationoriginals_id", '=', "$t1.id")
             ->leftJoin("locales as $t2", "$t0.locales_id", '=', "$t2.id");
 
-        foreach ($this->conditions as $k => $v) {
+        foreach ($this->conditions() as $k => $v) {
             if ($this->filters[$k] > 0) {
-                $cond = $this->conditions[$k];
+                $cond = $this->conditions()[$k];
                 $value = strtr($cond['value'], $this->replaceFieldToValue());
                 $query->where(str_replace('-', '.', $k), $cond['operator'], $value, $cond['boolean']);
             }
