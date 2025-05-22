@@ -204,7 +204,7 @@ class TranslationsController extends IcseusdController
             ->leftJoin("locales as $t2", "$t0.locales_id", '=', "$t2.id");
 
         foreach ($this->conditions() as $k => $v) {
-            if ($this->filters[$k] > 0) {
+            if ($this->filters[$k] > '') {
                 $cond = $this->conditions()[$k];
                 $value = strtr($cond['value'], $this->replaceFieldToValue());
                 $query->where(str_replace('-', '.', $k), $cond['operator'], $value, $cond['boolean']);
