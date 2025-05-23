@@ -14,6 +14,7 @@ class TranslationsGUIServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Publikálható migrációk
+        $groupsBase = 'ice-translations-gui';
+        $this->publishes([__DIR__ . '/resources/js' =>  resource_path("js/totocsa/$groupsBase")], "$groupsBase-resources");
     }
 }
